@@ -18,10 +18,12 @@ class Poll{
 
 class PollOption{
   final int id;
+  final String entry;
   final String label;
 
   PollOption({
     required this.id,
+    required this.entry,
     required this.label
   });
 }
