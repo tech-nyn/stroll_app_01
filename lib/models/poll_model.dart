@@ -1,15 +1,17 @@
 
 
-class Poll{
-  final int id;
-  final List<PollOption> options;
-  final String question;
+class PollData{
+  final int? id;
+  final List<PollOption>? options;
+  final String? question;
+  final String? opinion;
 
 
-  Poll({
-    required this.id,
-    required this.question,
-    required this.options,
+  PollData({
+    this.id,
+    this.question,
+    this.options,
+    this.opinion,
   });
 }
 

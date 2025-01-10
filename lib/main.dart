@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: "nunito_sans"
       ),
       debugShowCheckedModeBanner: false,
       home: const QuizScreen(),

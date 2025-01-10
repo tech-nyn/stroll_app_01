@@ -1,5 +1,7 @@
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:stroll_app_01/constants/constants.dart';
+import 'package:stroll_app_01/models/models.dart';
 
 part 'poll_provider.g.dart';
 
@@ -8,40 +10,29 @@ class Poll extends _$Poll{
 // class Poll extends Notifier{
 
   @override
-  // PollState? build() => ;
-  PollState? build() => PollState(questionId: 1);
+  PollState? build() => PollState(poll: question);
 
   void toggleOption(int optionId) {
-    if(state?.optionId == optionId) return;
-    state = state?.copyWith(
-      optionId: optionId,
-    );
+    if(state?.selectedOption == optionId) return;
+    state = state?.copyWith(selectedOption: optionId);
   }
 }
 
 
 
-
-
-
 class PollState {
-  // final List<Option> options;
-  // final Option? selectedOption;
-  final int? questionId;
-  final int? optionId;
+  final PollData? poll;
+  final int? selectedOption;
 
-  PollState({
-    this.questionId,
-    this.optionId
-  });
+  PollState({this.poll, this.selectedOption});
 
   PollState copyWith({
-    int? questionId,
-    int? optionId,
+    PollData? poll,
+    int? selectedOption,
   }) {
     return PollState(
-      questionId: questionId ?? questionId,
-      optionId: optionId ?? optionId,
+      poll: poll ?? this.poll,
+      selectedOption: selectedOption ?? this.selectedOption
     );
   }
 }
